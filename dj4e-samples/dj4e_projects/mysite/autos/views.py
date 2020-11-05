@@ -11,10 +11,8 @@ class MainView(LoginRequiredMixin, View):
     def get(self, request):
         mc = Make.objects.all().count()
         al = Auto.objects.all()
-
         ctx = {'make_count': mc, 'auto_list': al}
         return render(request, 'autos/auto_list.html', ctx)
-
 
 class MakeView(LoginRequiredMixin, View):
     def get(self, request):
